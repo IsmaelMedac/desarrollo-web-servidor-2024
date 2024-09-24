@@ -117,7 +117,14 @@
         elseif ($numero2 > $numero1) echo "<p>El numero $numero2 es mayor que el numero $numero1 </p>";
         else echo "<p>Los números son iguales</p>";
 
+    //FUNCION PRECIO CON IVA, CUIDADO
 
+     $numero = rand(-10,20);
+     $resultado = match(true){
+        $numero >= -10 && $numero < 0 => "El numero $numero esta en el rango [-10,0)",
+        $numero >= 0 && $numero <= 10 => "El numero $numero esta en el rango [0,10]",
+        $numero > 10 && $numero <= 20 => "El numero $numero esta en el rango (10,20]"
+     };
     ?>
 
 </body>
