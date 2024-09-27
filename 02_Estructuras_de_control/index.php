@@ -48,6 +48,20 @@
             </td>
             <td>Ejercicio de clases de la semana. </td>
         </tr>
+
+        <tr>
+            <td>
+                <a href="edades.php">edades.php</a>
+            </td>
+            <td>Ejercicio de edades</td>
+        </tr>
+
+        <tr>
+            <td>
+                <a href="Ejercicio01.php">Ejercicio01.php</a>
+            </td>
+            <td>Ejercicio01</td>
+        </tr>
     </tbody>
 </table>
 </body>
