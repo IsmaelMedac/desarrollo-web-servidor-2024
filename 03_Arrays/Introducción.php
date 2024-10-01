@@ -23,12 +23,46 @@
 
     //echo $frutas["clave 1"];
     //echo "<br>";
-
+    
+    echo "<h3>Mis frutas</h3>";
+    echo "<ol>";
     $frutas = [ //SI NO ASIGNO EL LUGAR, SE ASIGNA POR DEFECTO
         "Manzana",
         "Naranja",
         "Cereza"
     ];
+
+    for($i = 0; $i < count($frutas); $i++){
+        echo "<li>" . $frutas[$i] . "</li>";
+    }
+    echo "</ol>";
+
+    echo "<h3>Mis frutas WHILE</h3>";
+    echo "<ol>";
+    $i = 0;
+    while($i < count($frutas)){
+        echo "<li>" . $frutas[$i] . "</li>";
+        $i++;
+    }
+    echo "</ol>";
+    
+    echo "<br>";
+    echo "=====================";
+    echo "<br>";
+    
+
+    echo "<h3>Mis frutas FOREACH</h3>";
+    echo "<ol>";
+    foreach ($frutas as $fruta) {
+        echo "<li>$fruta</li>";
+    }
+    echo "</ol>";
+
+    echo "<br>";
+    echo "=====================";
+    echo "<br>";
+
+
     array_push($frutas, "Mango", "Melocotón");
     $frutas[] = "Sandía";
     $frutas[7] = "Uva";
@@ -73,13 +107,15 @@
     print_r ($lista_personas["33386524c"] . "<br>");
     print_r ($lista_personas['12345678t'] . "<br>");
     */
-    unset($lista_personas["77326941v"]); //borrar
+    unset($lista_personas[0]); //borrar
     $lista_personas["985689798m"] = "Cristiano Ronaldo"; //añadir con clave
     array_push($lista_personas, "¿Ronaldinho gaust?"); //añadir sin clave
     $lista_personas[7] = "Mango"; //añadir en cajan concreto
     
     $lista_personas = array_values($lista_personas); //arreglar orden
     print_r($lista_personas);
+
+    //En php todos los arrays, son arrays asociativos
 
     ?>
 </body>
