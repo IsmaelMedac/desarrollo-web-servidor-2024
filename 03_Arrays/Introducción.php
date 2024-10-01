@@ -212,7 +212,7 @@
         echo "<td>$asignaturas</td>";
         echo "<td>$profesores</td>";
         echo "</tr>";
-    }
+    };
     ?>
      </tbody>
      </table>
@@ -239,17 +239,87 @@
         "Inglés" => "Virginia"
     );
 
+    ksort($lista_profesores);
     foreach($lista_profesores as $asignaturas => $profesores){
-        
         echo "<tr>";
         echo "<td>$asignaturas</td>";
         echo "<td>$profesores</td>";
         echo "</tr>";
-        
-    }
+    };
     ?>
      </tbody>
      </table>
+    <br><br>
+     <table>
+        <thead>
+            <tr>
+                <th>Asignatura</th>
+                <th>Profesor</th>
+            </tr>
+        </thead>
+        <tbody>
+    <?php
+    
+    $lista_profesores = array(
+        "Desarrollo web servidor" => "Alejandra",
+        "Desarrollo web cliente" => "Jaime",
+        "Diseño de interfaces" => "José",
+        "Despliegue de aplicaciones web" => "Alejandro",
+        "Empresa e iniciativa" => "Gloria",
+        "Inglés" => "Virginia"
+    );
+
+    krsort($lista_profesores);
+    foreach($lista_profesores as $asignaturas => $profesores){
+        echo "<tr>";
+        echo "<td>$asignaturas</td>";
+        echo "<td>$profesores</td>";
+        echo "</tr>";
+    };
+    ?>
+     </tbody>
+     </table>
+     
+
+     <br>
+      <br>  
+    
+      <table>
+        <thead>
+            <tr>
+                <th>Asignatura</th>
+                <th>Profesor</th>
+            </tr>
+        </thead>
+        <tbody>
+    <?php
+    
+    $lista_alumnos = array(
+        "Guillermo" => "3",
+        "Daiana" => "5",
+        "Angel" => "8",
+        "Ayoub" => "7",
+        "Mateo" => "9",
+        "Joaquin" => "4"
+    );
+
+    
+    foreach($lista_alumnos as $nombres => $notas){
+        echo "<tr>";
+        echo "<td>$nombres</td>";
+        echo "<td>$notas</td>";
+        if($notas > 4){
+            echo "<td>$notas --> Aprobado</td>";
+        } else {
+            echo "<td> $notas --> Suspenso</td>";
+        }
+        echo "</tr>";
+    };
+    ?>
+     </tbody>
+     </table>
+
+
         
 </body>
 </html>
