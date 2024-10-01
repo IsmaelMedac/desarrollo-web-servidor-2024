@@ -62,6 +62,14 @@
             </td>
             <td>Ejercicio01</td>
         </tr>
+
+        <tr>
+            <td>
+                <a href="listas.php">listas.php</a>
+            </td>
+            <td>Ejercicio listas</td>
+        </tr>
+        
     </tbody>
 </table>
 </body>
