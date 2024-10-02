@@ -299,9 +299,7 @@
                 "Joaquin" => 4
             );
             */
-            
            ?>
-            
      </tbody>
      </table>
 
