@@ -277,45 +277,31 @@
         echo "</tr>";
     };
     ?>
+    
      </tbody>
      </table>
-     
-
-     <br>
-      <br>  
-    
-      <table>
+     <table>
+     <caption>Estudiantes</caption> 
         <thead>
             <tr>
-                <th>Asignatura</th>
-                <th>Profesor</th>
             </tr>
         </thead>
         <tbody>
-    <?php
-    
-    $lista_alumnos = array(
-        "Guillermo" => "3",
-        "Daiana" => "5",
-        "Angel" => "8",
-        "Ayoub" => "7",
-        "Mateo" => "9",
-        "Joaquin" => "4"
-    );
-
-    
-    foreach($lista_alumnos as $nombres => $notas){
-        echo "<tr>";
-        echo "<td>$nombres</td>";
-        echo "<td>$notas</td>";
-        if($notas > 4){
-            echo "<td>$notas --> Aprobado</td>";
-        } else {
-            echo "<td> $notas --> Suspenso</td>";
-        }
-        echo "</tr>";
-    };
-    ?>
+          
+        <?php
+            /*
+             $lista_alumnos = array(
+                "Guillermo" => 3,
+                "Daiana" => 5,
+                "Angel" => 8,
+                "Ayoub" => 7,
+                "Mateo" => 9,
+                "Joaquin" => 4
+            );
+            */
+            
+           ?>
+            
      </tbody>
      </table>
 
