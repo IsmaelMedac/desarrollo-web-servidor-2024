@@ -40,22 +40,37 @@
     // array_multisort($_categoria, SORT_DESC, $videojuegos);
     
     ?>
+
+<?php
+    
+    for($i = 0; $i < count($videojuegos); $i++){
+        if($videojuegos[$i][2] > 0){
+        $videojuegos[$i][3] = "NO";
+        } 
+        else{
+            $videojuegos[$i][3] = "SI";
+        }    
+    }
+    print_r($videojuegos);
+    ?>
     <table>
         <thead>
             <tr>
                 <th>Titulo</th>
                 <th>Categoria</th>
                 <th>Precio</th>
+                <th>Gratis</th>
             </tr>
         </thead>
         <tbody>
             <?php
             foreach($videojuegos as $videojuego){
-                list($titulo, $categoria, $precio) = $videojuego;
+                list($titulo, $categoria, $precio, $gratis) = $videojuego;
                 echo "<tr>";
                 echo "<td>$titulo</td>";
                 echo "<td>$categoria</td>";
                 echo "<td>$precio</td>";
+                echo "<td>$gratis</td>";
                 echo "</tr>";
             }
             ?>

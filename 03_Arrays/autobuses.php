@@ -53,6 +53,21 @@
 
         $nuevo_autobus = ["Zaragoza", "Andorra", 250, 60];
         array_push($autobuses, $nuevo_autobus);
+
+
+        //$_origen = array_column($autobuses, 0);
+            //$_duracion = array_column($autobuses, 2);
+            //array_multisort($_origen, SORT_ASC, $_duracion, SORT_ASC, $autobuses);
+
+            //$_destino = array_column($autobuses, 1);
+            //array_multisort($_origen, SORT_ASC, $_destino, SORT_DESC, $autobuses);
+
+            $_duracion = array_column($autobuses, 2);
+            $_precio = array_column($autobuses, 3);
+            array_multisort($_duracion, SORT_ASC, $_precio, SORT_ASC, $autobuses);
+
+            //unset($autobuses[1]); //va por CLAVES no por posicion unicamente
+
     ?>
 
     <table>
@@ -66,19 +81,7 @@
         </thead>
         <tbody>
             <?php
-            //$_origen = array_column($autobuses, 0);
-            //$_duracion = array_column($autobuses, 2);
-            //array_multisort($_origen, SORT_ASC, $_duracion, SORT_ASC, $autobuses);
-
-            //$_destino = array_column($autobuses, 1);
-            //array_multisort($_origen, SORT_ASC, $_destino, SORT_DESC, $autobuses);
-
-            $_duracion = array_column($autobuses, 2);
-            $_precio = array_column($autobuses, 3);
-            array_multisort($_duracion, SORT_ASC, $_precio, SORT_ASC, $autobuses);
-
-            //unset($autobuses[1]); //va por CLAVES no por posicion unicamente
-
+            
             foreach($autobuses as $autobus){
                 list($origen, $destino, $duracion, $precio) = $autobus;
                 echo "<tr>";
@@ -91,5 +94,52 @@
             ?>
         </tbody>
     </table>
+
+        <!-- 
+    <?php
+    
+    for($i = 0; $i < count($autobuses); $i++){
+        if($autobuses[$i][2] <= 30){
+        $autobuses[$i][4] = "Corta distancia";
+        } 
+        elseif($autobuses[$i][2] > 30 && $autobuses[$i][2] <= 120){
+            $autobuses[$i][4] = "Media distancia";
+        } elseif($autobuses[$i][2] > 120){
+            $autobuses[$i][4] = "Larga distancia";
+        }
+    }
+    print_r($autobuses);
+    ?>
+    -->
+
+    <table>
+        <thead>
+            <tr>
+                <th>Origen</th>
+                <th>Destino</th>
+                <th>Duracion</th>
+                <th>Precio</th>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            
+            foreach($autobuses as $autobus){
+                list($origen, $destino, $duracion, $precio, $tipo) = $autobus;
+                echo "<tr>";
+                echo "<td>$origen</td>";
+                echo "<td>$destino</td>";
+                echo "<td>$duracion</td>";
+                echo "<td>$precio</td>";
+                echo "<td>$tipo</td>";
+                echo "</tr>";
+            }
+            ?>
+        </tbody>
+    </table>
+
+
+
 </body>
 </html>
