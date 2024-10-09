@@ -42,6 +42,7 @@ Ejemplos:
          * - 3º iteracion: res = 4 * 2 = 8
          */
         
+        
     }   
 ?>
 </body>

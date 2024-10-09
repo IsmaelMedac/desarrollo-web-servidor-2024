@@ -38,7 +38,7 @@ HTML la tabla de multiplicar de ese número. Ejemplo:
         $numero = (int) $_POST["numero"];
 
         for($i = 1; $i <= 10; $i++){
-            echo
+            echo "<p>$numero x $i = " . $numero*$i . "</p>";
         }
     }
 ?>
