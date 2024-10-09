@@ -44,5 +44,40 @@
         Y SE COMPRUEBE SI HAS ACERTADO
 
     -->
+
+        <?php
+        $numeros = [1,5,3,9,20,15,22,11];
+
+        for($i = 0; $i < count($numeros); $i++){
+            echo "$numeros[$i]";
+        }
+        ?>
+
+        
+        <form action="" method="post">
+            <label for="numero">Máximo</label>
+            <input type="text" name="numero" id="numero" placeholder="Introduce el maximo">
+            <br><br>
+            <input type="submit"> comprobar
+        </form>
+
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+            $numero = $_POST["numero"];
+            $candidato = $numeros[0];
+
+            for($i = 0; $i < count($numeros); $i++){
+                if($numeros[$i] > $candidato) $candidato = $numeros[$i];
+            }
+            $maximo = $candidato;
+
+            if($numero == $maximo){
+                echo "<h1>¡Has acertado! El maximo es $numero</h1>";
+            } else {
+                echo "<h1>¡Fallaste! El máximo es $maximo</h1>";
+            }
+        }
+        ?>
+
 </body>
 </html>
