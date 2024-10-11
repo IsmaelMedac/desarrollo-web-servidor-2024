@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Iva</title>
     <?php
+    // Activamos los errores de PHP
+    error_reporting(E_ALL);
+    ini_set("display_errors",1);
+    // Declaración de las constantes
     define("GENERAL", 1.21);
     define("REDUCIDO", 1.1);
     define("SUPERREDUCIDO", 1.04);
