@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Iva</title>
+    <?php
+    define("GENERAL", 1.21);
+    define("REDUCIDO", 1.1);
+    define("SUPERREDUCIDO", 1.04);
+    ?>
 </head>
 <body>
 <!-- 4% SUPER REDUCIDO x1,04
@@ -23,5 +28,18 @@ pvp = 10 + 2,1 = 12,1
     </select> <br><br>
     <input type="submit" value="Calcular PVP">
 </form>
+
+<?php
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $precio = $_POST["precio"];
+        $iva = $_POST["iva"];
+
+        $pvp = match($iva){
+            "general" => $precio * GENERAL,
+            "reducido" => $precio * REDUCIDO,
+            "superreducido" => $precio * SUPERREDUCIDO
+        };
+    }
+?>
 </body>
 </html>
