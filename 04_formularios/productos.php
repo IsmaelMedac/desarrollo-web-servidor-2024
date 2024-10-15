@@ -15,25 +15,62 @@
         ["Xbox Series X", 400]
     ];
 
+<<<<<<< HEAD
     for($i = 0; $i < count($productos); $i++){
         $productos[$i][2] = rand(0,5);
     }
+=======
+    // Añadir el array una tercera columna que será el stock, y se generará con una rand entre 0 y 5
+    foreach ($productos as $producto) {
+        $producto[] = rand(0, 5);
+    }
+    unset($producto); // break the reference with the last element
+>>>>>>> refs/remotes/origin/main
 
+    // Mostrar en una tabla cada producto junto a su precio y stock
+    echo "<table border='1'>";
+    echo "<tr><th>Producto</th><th>Precio</th><th>Stock</th></tr>";
+    foreach ($productos as $producto) {
+        echo "<tr>";
+        echo "<td>{$producto[0]}</td>";
+        echo "<td>{$producto[1]}</td>";
+        echo "<td>{$producto[2]}</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
 
+    // Crear un formulario donde se introduzca el nombre de un producto
+    ?>
+    <form method="post">
+        <label for="producto">Nombre del producto:</label>
+        <input type="text" id="producto" name="producto">
+        <input type="submit" value="Buscar">
+    </form>
 
-    /**
-     * Añadir el array una tercera columna que será el stock, y se generará
-     * con una rand entre 0 y 5
-     * 
-     * Mostrar en una tabla cada producto junto a su precio y stock
-     * 
-     * Crear un formulario donde se introduzca el nombre de un producto, y:
-     * 
-     * - Si hay stock, decimos que está disponible y su precio
-     * - Si no hay, decimos que está agotado.
-     */
-    
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $nombreProducto = $_POST['producto'];
+        $encontrado = false;
 
+<<<<<<< HEAD
+=======
+        foreach ($productos as $producto) {
+            if (strcasecmp($producto[0], $nombreProducto) == 0) {
+                $encontrado = true;
+                if ($producto[2] > 0) {
+                    echo "<p>El producto '{$producto[0]}' está disponible. Precio: \${$producto[1]}</p>";
+                } else {
+                    echo "<p>El producto '{$producto[0]}' está agotado.</p>";
+                }
+                break;
+            }
+        }
+
+        if (!$encontrado) {
+            echo "<p>El producto '{$nombreProducto}' no se encuentra en la lista.</p>";
+        }
+    }
+>>>>>>> refs/remotes/origin/main
     ?>
     <table>
         <caption>Productos</caption>
