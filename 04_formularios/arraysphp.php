@@ -33,10 +33,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $suma = $numero1 + $numero2;
 
-    if($suma % $numero3 == 0 || $suma == 0){
-        echo "La suma de los dos primeros números es múltiplo de $numero3";
+    if($suma % $numero3 == 0){
+        echo "La suma de $numero1 y $numero2, ($suma) si es multiplo de $numero3";
     }else{
-        echo "La suma de los dos primeros números no es múltiplo de $numero3";
+        echo "La suma de $numero1 y $numero2, ($suma) no es múltiplo de $numero3";
     }
 }
 ?>
