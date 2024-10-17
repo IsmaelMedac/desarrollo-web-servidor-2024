@@ -15,17 +15,11 @@
         ["Xbox Series X", 400]
     ];
 
-<<<<<<< HEAD
-    for($i = 0; $i < count($productos); $i++){
-        $productos[$i][2] = rand(0,5);
-    }
-=======
     // Añadir el array una tercera columna que será el stock, y se generará con una rand entre 0 y 5
     foreach ($productos as $producto) {
         $producto[] = rand(0, 5);
     }
-    unset($producto); // break the reference with the last element
->>>>>>> refs/remotes/origin/main
+    //unset($producto); // break the reference with the last element
 
     // Mostrar en una tabla cada producto junto a su precio y stock
     echo "<table border='1'>";
@@ -52,8 +46,6 @@
         $nombreProducto = $_POST['producto'];
         $encontrado = false;
 
-<<<<<<< HEAD
-=======
         foreach ($productos as $producto) {
             if (strcasecmp($producto[0], $nombreProducto) == 0) {
                 $encontrado = true;
@@ -70,7 +62,6 @@
             echo "<p>El producto '{$nombreProducto}' no se encuentra en la lista.</p>";
         }
     }
->>>>>>> refs/remotes/origin/main
     ?>
     <table>
         <caption>Productos</caption>
