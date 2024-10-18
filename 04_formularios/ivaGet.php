@@ -22,7 +22,7 @@
 pvp = 10 + 2,1 = 12,1    
     -->
 
-    <form action="" method="post">
+    <form action="" method="get">
     <label for = "precio">Precio</label>
     <input type = "number" name = "precio" id = "precio"> <br> <br>
     <select name = "iva" id = "iva">
@@ -34,41 +34,31 @@ pvp = 10 + 2,1 = 12,1
 </form>
 
 <?php
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-        $precio = $_POST["precio"];
-        $iva = $_POST["iva"];
-
-        $pvp = match($iva){
-            "general" => $precio * GENERAL,
-            "reducido" => $precio * REDUCIDO,
-            "superreducido" => $precio * SUPERREDUCIDO
-        };
-    }
-?>
-
-
-<form action="" method="get">
-    <label for = "precio">Precio</label>
-    <input type = "number" name = "precio" id = "precio"> <br> <br>
-    <select name = "iva" id = "iva">
-        <option value="general">General</option>
-        <option value="reducido">reducido</option>
-        <option value="superredudido">Superreducido</option>
-    </select> <br><br>
-    <input type="submit" value="Calcular PVP">
-</form>
-
-<?php
-    if($_SERVER["REQUEST_METHOD"] == "GET"){
+    if(isset($_POST["precio"]) and isset($_GET["iva"])){ //si se ha seleccionado algo en el campo precio y campo iva
+        // AQUI solo entra si se le da al boton
+        // Haya o no datos
         $precio = $_GET["precio"];
         $iva = $_GET["iva"];
 
-        $pvp = match($iva){
-            "general" => $precio * GENERAL,
-            "reducido" => $precio * REDUCIDO,
-            "superreducido" => $precio * SUPERREDUCIDO
-        };
+        if($precio == '' and $iva = ''){
+            // Aqui solo entra si se le ha dado al boton
+            // y ademas se han introducido datos
+            $pvp = match($iva){
+                "general" => $precio * GENERAL,
+                "reducido" => $precio * REDUCIDO,
+                "superreducido" => $precio * SUPERREDUCIDO
+            };
+            echo "El PVP es $pvp";
+        } else {
+            echo "<p>Por favor, rellena todos los datos</p>";
+        }
+
+        //var_dump($precio);
+        //var_dump($iva);
+
+        
     }
 ?>
+
 </body>
 </html>
