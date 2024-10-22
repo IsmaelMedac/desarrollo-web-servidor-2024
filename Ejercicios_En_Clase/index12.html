@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            let div = document.getElementById('div1');
+            let img = document.querySelector('img');
+            let derecha = document.getElementById('derecha');
+            let izquierda = document.getElementById('izquierda');
+
+            img.style.position = 'absolute';
+            img.style.left = '0'; //podria hacer lo mismo con el right o solo con uno.
+            //img.style.maxWidth = '100px';
+            
+            derecha.onclick = function () {
+                img.style.left = parseInt(img.style.left) + 5 + 'px';
+            }
+
+            izquierda.onclick = function () {
+                if(img.style.left == "0px"){
+                    img.style.left = "0px";
+                }else {
+                    img.style.left = parseInt(img.style.left) - 5 + 'px';
+                }
+            }
+        }
+
+    </script>
+    <style>
+
+        #button-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" style="position: absolute; top: 0; left: 0;">
+        <img src="https://www.w3schools.com/w3css/img_lights.jpg" alt="imagen" style="width: 200px; height: 200px;">
+    </div>
+    
+    <div id="button-container">
+        <button id="izquierda">Izquierda</button>
+        <button id="derecha">Derecha</button>
+    </div>
+        
+    
+</body>
+</html>
