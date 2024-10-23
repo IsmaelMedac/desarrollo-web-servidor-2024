@@ -45,23 +45,6 @@
             $tmp_base = $_POST["base"];
             $tmp_exponente = $_POST["exponente"];  
 
-            //  Validación de la base
-            /*
-            if($tmp_base != '') {
-                if(filter_var($tmp_base, FILTER_VALIDATE_INT) !== FALSE) {
-                    if($tmp_base >= 0) {
-                        $base = $tmp_base;
-                    } else {
-                        echo "<p>La base debe ser mayor que 0</p>";
-                    }
-                } else {
-                    echo "<p>La base debe ser un número entero</p>";
-                }
-            } else {
-                echo "<p>La base es obligatoria</p>";
-            }
-            */
-
             if($tmp_base == '') {
                 echo "<p>La base es obligatoria</p>";
             } else {
@@ -76,22 +59,7 @@
                 }
             }
 
-            //  Validación del exponente
-            /*
-            if($tmp_exponente != '') {
-                if(filter_var($tmp_exponente, FILTER_VALIDATE_INT) !== FALSE) {
-                    if($tmp_exponente >= 0) {
-                        $exponente = $tmp_exponente;
-                    } else {
-                        echo "<p>El exponente debe ser mayor que 0</p>";
-                    }
-                } else {
-                    echo "<p>El exponente debe ser un número entero</p>";
-                }
-            } else {
-                echo "<p>El exponente es obligatorio</p>";
-            }
-            */
+
 
             if($tmp_exponente == '') {
                 echo "<p>El exponente es obligatorio</p>";
