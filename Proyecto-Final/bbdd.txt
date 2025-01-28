@@ -1,0 +1,27 @@
+-- Crear la base de datos
+CREATE DATABASE tienda_bd;
+USE tienda_bd;
+
+
+-- Tabla de Categorías
+CREATE TABLE categorias (
+    categoria VARCHAR(30) PRIMARY KEY,
+    descripcion VARCHAR(255)
+);
+
+-- Tabla de Productos
+CREATE TABLE productos (
+    id_producto INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_producto VARCHAR(50),
+    descripcion VARCHAR(255),
+    precio NUMERIC(6,2),
+    categoria VARCHAR(30),
+    FOREIGN KEY (categoria) REFERENCES categorias(categoria),
+    stock INT(3) default 0,
+    imagen VARCHAR(60)
+);
+
+CREATE TABLE usuarios (
+	usuario VARCHAR(15) PRIMARY KEY,
+    contrasenia VARCHAR(255) NOT NULL
+);
