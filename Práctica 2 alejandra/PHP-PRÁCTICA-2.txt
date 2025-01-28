@@ -1,0 +1,20 @@
+- validacion de formularios (texto, patron, X valor, palabras baneadas, campo noseque con filter var, fechas)
+- validar fecha, dia concreto, FECHA DINÁMICA. En papel fecha estatica.
+- textArea, inputs
+- ip de ordenador¿? -> filter var mediante url
+- botones
+- campo obligatorio / campo opcional
+- cual es el error que ha saltado
+- funciones, funcion depurar
+
+funcion in array
+pregMatch
+
+
+SON 7-8 CAMPOS
+
+papel --> validar formulario
+funcion in array
+pregMatch
+explode, list
+date

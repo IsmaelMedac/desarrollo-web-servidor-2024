@@ -87,6 +87,30 @@
                 } else {
                     $fecha_actual = date("Y-m-d");
                     list($anno_actual, $mes_actual, $dia_actual) = explode('', $fecha_actual);
+                    list($anno_nacimiento, $mes_nacimiento, $dia_nacimiento) = explode ('-', $tmp_fecha_nacimiento);
+
+                    if($anno_actual - $anno_nacimiento <= 120 and $anno_actual - $anno_nacimiento > 0){
+                        $fecha_nacimiento = $tmp_fecha_nacimiento;
+                    } else if($anno_actual - $anno_nacimiento > 120){
+                        $err_fecha_nacimiento = "No puedes tener mas de 120 años";
+                    } else if ($anno_actual - $anno_nacimiento < 0){
+                        $err_fecha_nacimiento = "No puedes tener menos de 0 años";
+                    } else if($anno_actual - $anno_nacimiento == 121){
+                        if($mes_actual - $mes_nacimiento < 0){
+                            //la persona aun no ha cumplido 121
+                            $fecha_nacimiento = $tmp_fecha_nacimiento;
+                        } else if($mes_actual - $mes_nacimiento > 0){
+                            $err_fecha_nacimiento = "No puedes tener mas de 120 años";
+                        } else if ($mes_actual - $mes_nacimiento == 0){
+                            if($dia_actual - $dia_nacimiento < 0){
+                                $fecha_nacimiento = $tmp_fecha_nacimiento;
+                            } else if($dia_actual - $dia_nacimiento >= 0){
+                                $err_fecha_nacimiento = "No puedes tener mas de 120 años";
+                            }
+                        }
+                    } else if($ann){
+                        
+                    }
                 }
             }
 

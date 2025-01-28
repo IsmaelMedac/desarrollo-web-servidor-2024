@@ -1,0 +1,16 @@
+filter bar
+explode //es como el split
+date
+str len para tamaño maximo
+rango de fechas
+patron
+
+!in_array
+!preg_match compara la expresion regular con otra variable ($patron, $otra_tmp)
+
+
+- Equipo : entre 3 y 20 caracteres. Puede contener letras, espacios en blanco y puntos (ej. "Malaga C.F.")
+- Iniciales: 3 caracteres exactos (ej. "MCF")
+- Liga : opciones con select, Liga EA Sports, Liga HyperMotion, Primera RFEF
+- Número de jugadores: entre 26 y 32
+- Fecha de fundación: entre hoy (dinámico) y 18 de diciembre de 1889 (inclusive)
